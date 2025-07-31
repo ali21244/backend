@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Models;
+
+use App\Models\User;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+class Address extends Model
+{
+    use HasFactory;
+
+      protected $fillable = [
+        'name',
+        'street',
+        'city',
+        'state',
+        'country',
+        'postal_code',
+        'phone',
+        'is_default',
+        'type',
+    ];
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+}
